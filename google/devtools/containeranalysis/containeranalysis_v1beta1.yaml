@@ -4,8 +4,7 @@ name: containeranalysis.googleapis.com
 title: Container Analysis API
 
 apis:
-- name: google.devtools.containeranalysis.v1beta1.ContainerAnalysisV1Beta1
-- name: grafeas.v1beta1.GrafeasV1Beta1
+- name: google.devtools.containeranalysis.v1beta1.ContainerAnalysis
 
 documentation:
   summary: |-
@@ -17,47 +16,17 @@ documentation:
 
 backend:
   rules:
-  - selector: google.devtools.containeranalysis.v1beta1.ContainerAnalysisV1Beta1.SetIamPolicy
+  - selector: google.devtools.containeranalysis.v1beta1.ContainerAnalysis.SetIamPolicy
     deadline: 30.0
-  - selector: google.devtools.containeranalysis.v1beta1.ContainerAnalysisV1Beta1.GetIamPolicy
+  - selector: google.devtools.containeranalysis.v1beta1.ContainerAnalysis.GetIamPolicy
     deadline: 30.0
-  - selector: google.devtools.containeranalysis.v1beta1.ContainerAnalysisV1Beta1.TestIamPermissions
+  - selector: google.devtools.containeranalysis.v1beta1.ContainerAnalysis.TestIamPermissions
     deadline: 30.0
-  - selector: google.devtools.containeranalysis.v1beta1.ContainerAnalysisV1Beta1.GetScanConfig
+  - selector: google.devtools.containeranalysis.v1beta1.ContainerAnalysis.GetScanConfig
     deadline: 30.0
-  - selector: google.devtools.containeranalysis.v1beta1.ContainerAnalysisV1Beta1.ListScanConfigs
+  - selector: google.devtools.containeranalysis.v1beta1.ContainerAnalysis.ListScanConfigs
     deadline: 30.0
-  - selector: google.devtools.containeranalysis.v1beta1.ContainerAnalysisV1Beta1.UpdateScanConfig
-    deadline: 30.0
-  - selector: grafeas.v1beta1.GrafeasV1Beta1.GetOccurrence
-    deadline: 30.0
-  - selector: grafeas.v1beta1.GrafeasV1Beta1.ListOccurrences
-    deadline: 30.0
-  - selector: grafeas.v1beta1.GrafeasV1Beta1.DeleteOccurrence
-    deadline: 30.0
-  - selector: grafeas.v1beta1.GrafeasV1Beta1.CreateOccurrence
-    deadline: 30.0
-  - selector: grafeas.v1beta1.GrafeasV1Beta1.BatchCreateOccurrences
-    deadline: 30.0
-  - selector: grafeas.v1beta1.GrafeasV1Beta1.UpdateOccurrence
-    deadline: 30.0
-  - selector: grafeas.v1beta1.GrafeasV1Beta1.GetOccurrenceNote
-    deadline: 30.0
-  - selector: grafeas.v1beta1.GrafeasV1Beta1.GetNote
-    deadline: 30.0
-  - selector: grafeas.v1beta1.GrafeasV1Beta1.ListNotes
-    deadline: 30.0
-  - selector: grafeas.v1beta1.GrafeasV1Beta1.DeleteNote
-    deadline: 30.0
-  - selector: grafeas.v1beta1.GrafeasV1Beta1.CreateNote
-    deadline: 30.0
-  - selector: grafeas.v1beta1.GrafeasV1Beta1.BatchCreateNotes
-    deadline: 30.0
-  - selector: grafeas.v1beta1.GrafeasV1Beta1.UpdateNote
-    deadline: 30.0
-  - selector: grafeas.v1beta1.GrafeasV1Beta1.ListNoteOccurrences
-    deadline: 30.0
-  - selector: grafeas.v1beta1.GrafeasV1Beta1.GetVulnerabilityOccurrencesSummary
+  - selector: google.devtools.containeranalysis.v1beta1.ContainerAnalysis.UpdateScanConfig
     deadline: 30.0
 
 authentication:

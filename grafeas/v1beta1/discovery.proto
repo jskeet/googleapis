@@ -14,9 +14,9 @@
 
 syntax = "proto3";
 
-package grafeas.v1beta1.discovery;
+package grafeas.v1beta1;
 
-import "google/devtools/containeranalysis/v1beta1/common/common.proto";
+import "grafeas/v1beta1/common.proto";
 import "google/protobuf/timestamp.proto";
 import "google/rpc/status.proto";
 
@@ -30,11 +30,11 @@ option objc_class_prefix = "GRA";
 // consumer's project at the start of analysis.
 message Discovery {
   // The kind of analysis that is handled by this discovery.
-  grafeas.v1beta1.NoteKind analysis_kind = 1;
+  NoteKind analysis_kind = 1;
 }
 
 // Details of a discovery occurrence.
-message Details {
+message DiscoveryDetails {
   // Analysis status for the discovered resource.
   Discovered discovered = 1;
 }

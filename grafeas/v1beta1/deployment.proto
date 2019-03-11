@@ -14,7 +14,7 @@
 
 syntax = "proto3";
 
-package grafeas.v1beta1.deployment;
+package grafeas.v1beta1;
 
 import "google/protobuf/timestamp.proto";
 
@@ -30,7 +30,7 @@ message Deployable {
 }
 
 // Details of a deployment occurrence.
-message Details {
+message DeploymentDetails {
   // Deployment history for the resource.
   Deployment deployment = 1;
 }

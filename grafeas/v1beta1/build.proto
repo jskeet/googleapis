@@ -14,9 +14,9 @@
 
 syntax = "proto3";
 
-package grafeas.v1beta1.build;
+package grafeas.v1beta1;
 
-import "google/devtools/containeranalysis/v1beta1/provenance/provenance.proto";
+import "grafeas/v1beta1/provenance.proto";
 
 option go_package = "google.golang.org/genproto/googleapis/devtools/containeranalysis/v1beta1/build;build";
 option java_multiple_files = true;
@@ -77,9 +77,9 @@ message BuildSignature {
 }
 
 // Details of a build occurrence.
-message Details {
+message BuildDetails {
   // The actual provenance for the build.
-  grafeas.v1beta1.provenance.BuildProvenance provenance = 1;
+  BuildProvenance provenance = 1;
 
   // Serialized JSON representation of the provenance, used in generating the
   // `BuildSignature` in the corresponding Result. After verifying the

@@ -14,7 +14,7 @@
 
 syntax = "proto3";
 
-package grafeas.v1beta1.attestation;
+package grafeas.v1beta1;
 
 option go_package = "google.golang.org/genproto/googleapis/devtools/containeranalysis/v1beta1/attestation;attestation";
 option java_multiple_files = true;
@@ -108,7 +108,7 @@ message Authority {
 }
 
 // Details of an attestation occurrence.
-message Details {
+message AttestationDetails {
   // Attestation for the resource.
   Attestation attestation = 1;
 }

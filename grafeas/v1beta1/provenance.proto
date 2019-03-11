@@ -14,9 +14,9 @@
 
 syntax = "proto3";
 
-package grafeas.v1beta1.provenance;
+package grafeas.v1beta1;
 
-import "google/devtools/containeranalysis/v1beta1/source/source.proto";
+import "grafeas/v1beta1/source.proto";
 import "google/protobuf/timestamp.proto";
 
 option go_package = "google.golang.org/genproto/googleapis/devtools/containeranalysis/v1beta1/provenance;provenance";
@@ -89,13 +89,13 @@ message Source {
   map<string, FileHashes> file_hashes = 2;
 
   // If provided, the source code used for the build came from this location.
-  grafeas.v1beta1.source.SourceContext context = 3;
+  SourceContext context = 3;
 
   // If provided, some of the source code used for the build may be found in
   // these locations, in the case where the source repository had multiple
   // remotes or submodules. This list will not include the context specified in
   // the context field.
-  repeated grafeas.v1beta1.source.SourceContext additional_contexts = 4;
+  repeated SourceContext additional_contexts = 4;
 }
 
 // Container message for hashes of byte content of files, used in Source

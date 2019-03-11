@@ -14,7 +14,7 @@
 
 syntax = "proto3";
 
-package grafeas.v1beta1.package;
+package grafeas.v1beta1;
 
 option go_package = "google.golang.org/genproto/googleapis/devtools/containeranalysis/v1beta1/package;package";
 option java_multiple_files = true;
@@ -82,7 +82,7 @@ message Package {
 }
 
 // Details of a package occurrence.
-message Details {
+message InstallationDetails {
   // Where the package was installed.
   Installation installation = 1;
 }

@@ -14,7 +14,7 @@
 
 syntax = "proto3";
 
-package grafeas.v1beta1.source;
+package grafeas.v1beta1;
 
 option go_package = "google.golang.org/genproto/googleapis/devtools/containeranalysis/v1beta1/source;source";
 option java_multiple_files = true;

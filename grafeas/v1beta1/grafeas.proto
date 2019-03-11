@@ -17,18 +17,18 @@ syntax = "proto3";
 package grafeas.v1beta1;
 
 import "google/api/annotations.proto";
-import "google/devtools/containeranalysis/v1beta1/attestation/attestation.proto";
-import "google/devtools/containeranalysis/v1beta1/build/build.proto";
-import "google/devtools/containeranalysis/v1beta1/common/common.proto";
-import "google/devtools/containeranalysis/v1beta1/deployment/deployment.proto";
-import "google/devtools/containeranalysis/v1beta1/discovery/discovery.proto";
-import "google/devtools/containeranalysis/v1beta1/image/image.proto";
-import "google/devtools/containeranalysis/v1beta1/package/package.proto";
-import "google/devtools/containeranalysis/v1beta1/provenance/provenance.proto";
-import "google/devtools/containeranalysis/v1beta1/vulnerability/vulnerability.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/timestamp.proto";
+import "grafeas/v1beta1/attestation.proto";
+import "grafeas/v1beta1/build.proto";
+import "grafeas/v1beta1/common.proto";
+import "grafeas/v1beta1/deployment.proto";
+import "grafeas/v1beta1/discovery.proto";
+import "grafeas/v1beta1/image.proto";
+import "grafeas/v1beta1/package.proto";
+import "grafeas/v1beta1/provenance.proto";
+import "grafeas/v1beta1/vulnerability.proto";
 
 option go_package = "google.golang.org/genproto/googleapis/devtools/containeranalysis/v1beta1/grafeas;grafeas";
 option java_multiple_files = true;
@@ -49,7 +49,7 @@ option objc_class_prefix = "GRA";
 // For example, an SSL vulnerability could affect multiple images. In this case,
 // there would be one note for the vulnerability and an occurrence for each
 // image with the vulnerability referring to that note.
-service GrafeasV1Beta1 {
+service Grafeas {
   // Gets the specified occurrence.
   rpc GetOccurrence(GetOccurrenceRequest) returns (Occurrence) {
     option (google.api.http) = {
@@ -190,7 +190,7 @@ message Occurrence {
 
   // Output only. This explicitly denotes which of the occurrence details are
   // specified. This field can be used as a filter in list requests.
-  grafeas.v1beta1.NoteKind kind = 4;
+  NoteKind kind = 4;
 
   // A description of actions that can be taken to remedy the note.
   string remediation = 5;
@@ -205,20 +205,20 @@ message Occurrence {
   // resource.
   oneof details {
     // Describes a security vulnerability.
-    grafeas.v1beta1.vulnerability.Details vulnerability = 8;
+    VulnerabilityDetails vulnerability = 8;
     // Describes a verifiable build.
-    grafeas.v1beta1.build.Details build = 9;
+    BuildDetails build = 9;
     // Describes how this resource derives from the basis in the associated
     // note.
-    grafeas.v1beta1.image.Details derived_image = 10;
+    BuildDetails derived_image = 10;
     // Describes the installation of a package on the linked resource.
-    grafeas.v1beta1.package.Details installation = 11;
+    InstallationDetails installation = 11;
     // Describes the deployment of an artifact on a runtime.
-    grafeas.v1beta1.deployment.Details deployment = 12;
+    DeploymentDetails deployment = 12;
     // Describes when a resource was discovered.
-    grafeas.v1beta1.discovery.Details discovered = 13;
+    DiscoveryDetails discovered = 13;
     // Describes an attestation of an artifact.
-    grafeas.v1beta1.attestation.Details attestation = 14;
+    AttestationDetails attestation = 14;
   }
 
   // next_id = 15;
@@ -233,7 +233,7 @@ message Resource {
   // `https://gcr.io/project/image@sha256:foo` for a Docker image.
   string uri = 2;
   // The hash of the resource content. For example, the Docker digest.
-  grafeas.v1beta1.provenance.Hash content_hash = 3;
+  Hash content_hash = 3;
 
   // next_id = 4;
 }
@@ -252,10 +252,10 @@ message Note {
 
   // Output only. The type of analysis. This field can be used as a filter in
   // list requests.
-  grafeas.v1beta1.NoteKind kind = 4;
+  NoteKind kind = 4;
 
   // URLs associated with this note.
-  repeated grafeas.v1beta1.RelatedUrl related_url = 5;
+  repeated RelatedUrl related_url = 5;
 
   // Time of expiration for this note. Empty if note does not expire.
   google.protobuf.Timestamp expiration_time = 6;
@@ -274,19 +274,19 @@ message Note {
   // Required. Immutable. The type of analysis this note represents.
   oneof type {
     // A note describing a package vulnerability.
-    grafeas.v1beta1.vulnerability.Vulnerability vulnerability = 10;
+    Vulnerability vulnerability = 10;
     // A note describing build provenance for a verifiable build.
-    grafeas.v1beta1.build.Build build = 11;
+    Build build = 11;
     // A note describing a base image.
-    grafeas.v1beta1.image.Basis base_image = 12;
+    Basis base_image = 12;
     // A note describing a package hosted by various package managers.
-    grafeas.v1beta1.package.Package package = 13;
+    Package package = 13;
     // A note describing something that can be deployed.
-    grafeas.v1beta1.deployment.Deployable deployable = 14;
+    Deployable deployable = 14;
     // A note describing the initial analysis of a resource.
-    grafeas.v1beta1.discovery.Discovery discovery = 15;
+    Discovery discovery = 15;
     // A note describing an attestation role.
-    grafeas.v1beta1.attestation.Authority attestation_authority = 16;
+    Authority attestation_authority = 16;
   }
 
   // next_id = 17;
@@ -493,7 +493,7 @@ message VulnerabilityOccurrencesSummary {
     Resource resource = 1;
     // The severity for this count. SEVERITY_UNSPECIFIED indicates total across
     // all severities.
-    grafeas.v1beta1.vulnerability.Severity severity = 2;
+    Severity severity = 2;
     // The number of fixable vulnerabilities associated with this resource.
     int64 fixable_count = 3;
     // The total number of vulnerabilities associated with this resource.

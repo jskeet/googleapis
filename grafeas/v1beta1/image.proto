@@ -14,7 +14,7 @@
 
 syntax = "proto3";
 
-package grafeas.v1beta1.image;
+package grafeas.v1beta1;
 
 option go_package = "google.golang.org/genproto/googleapis/devtools/containeranalysis/v1beta1/image;image";
 option java_multiple_files = true;
@@ -117,7 +117,7 @@ message Basis {
 }
 
 // Details of an image occurrence.
-message Details {
+message ImageDetails {
   // The child image derived from the base image.
   Derived derived_image = 1;
 }

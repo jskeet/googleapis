@@ -21,6 +21,7 @@ import "google/iam/v1/iam_policy.proto";
 import "google/iam/v1/policy.proto";
 import "google/protobuf/timestamp.proto";
 
+option csharp_namespace = "Google.Cloud.ContainerAnalysis.V1Beta1";
 option go_package = "google.golang.org/genproto/googleapis/devtools/containeranalysis/v1beta1;containeranalysis";
 option java_multiple_files = true;
 option java_package = "com.google.containeranalysis.v1beta1";
@@ -39,7 +40,7 @@ option objc_class_prefix = "GCA";
 // For example, an SSL vulnerability could affect multiple images. In this case,
 // there would be one note for the vulnerability and an occurrence for each
 // image with the vulnerability referring to that note.
-service ContainerAnalysisV1Beta1 {
+service ContainerAnalysis {
   // Sets the access control policy on the specified note or occurrence.
   // Requires `containeranalysis.notes.setIamPolicy` or
   // `containeranalysis.occurrences.setIamPolicy` permission if the resource is
