@@ -60,6 +60,8 @@ publishing:
       common:
         destinations:
         - PACKAGE_MANAGER
+      forced_namespace_aliases:
+      - Google.Cloud.Kms.V1
     ruby_settings:
       common:
         destinations:

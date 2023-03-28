@@ -655,3 +655,11 @@ authentication:
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/cloud-platform
+
+publishing:
+  librarySettings:
+  - dotnetSettings:
+      renamed_resources:
+        datalabeling.googleapis.com/Dataset: DataLabelingDataset
+        automl.googleapis.com/Dataset: AutoMLDataset
+        automl.googleapis.com/Model: AutoMLModel

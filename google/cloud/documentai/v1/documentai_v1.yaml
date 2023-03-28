@@ -84,3 +84,9 @@ authentication:
     oauth:
       canonical_scopes: |-
         https://www.googleapis.com/auth/cloud-platform
+
+publishing:
+  library_settings:
+  - dotnet_settings:
+      ignored_resources:
+      - documentai.googleapis.com/Location

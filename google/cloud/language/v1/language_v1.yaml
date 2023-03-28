@@ -19,3 +19,12 @@ authentication:
       canonical_scopes: |-
         https://www.googleapis.com/auth/cloud-language,
         https://www.googleapis.com/auth/cloud-platform
+
+publishing:
+  library_settings:
+  - dotnet_settings:
+      handwritten_signatures:
+      - LanguageService.AnalyzeEntities(document)
+      - LanguageService.AnalyzeSyntax(document)
+      - LanguageService.AnnotateText(document,features)
+      - LanguageService.AnalyzeEntitySentiment(document)

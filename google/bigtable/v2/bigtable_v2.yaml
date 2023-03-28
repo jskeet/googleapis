@@ -41,3 +41,9 @@ authentication:
         https://www.googleapis.com/auth/cloud-bigtable.data.readonly,
         https://www.googleapis.com/auth/cloud-platform,
         https://www.googleapis.com/auth/cloud-platform.read-only
+
+publishing:
+  library_settings:
+  - dotnet_settings:
+      renamed_services:
+        Bigtable: BigtableServiceApi

@@ -97,3 +97,10 @@ authentication:
       canonical_scopes: |-
         https://www.googleapis.com/auth/cloud-platform,
         https://www.googleapis.com/auth/pubsub
+
+publishing:
+  library_settings:
+  - dotnet_settings:
+      renamed_services:
+        Subscriber: SubscriberServiceApi
+        Publisher: PublisherServiceApi
