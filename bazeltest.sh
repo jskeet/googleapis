@@ -1,8 +1,10 @@
 #!/bin/bash
 
-bazel build //google/cloud/functions/v2:functions_proto_with_info
-bazel build //google/cloud/functions/v2:functions_csharp_grpc
+bazel build @gapic_generator_csharp//rules_csharp_gapic:csharp_gapic_generator_binary
 
-echo "Now for C#"
+#bazel build //google/cloud/functions/v2:functions_proto_with_info
+#bazel build //google/cloud/functions/v2:functions_csharp_grpc
 
-bazel build //google/cloud/functions/v2:functions_csharp_gapic
+#echo "Now for C#"
+
+#bazel build //google/cloud/functions/v2:functions_csharp_gapic
