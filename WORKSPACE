@@ -432,7 +432,6 @@ _gapic_generator_csharp_version = "1.4.15"
 
 http_archive(
     name = "gapic_generator_csharp",
-    sha256 = _gapic_generator_csharp_sha256,
     strip_prefix = "gapic-generator-csharp-%s" % _gapic_generator_csharp_version,
     urls = ["https://github.com/googleapis/gapic-generator-csharp/archive/refs/tags/v%s.tar.gz" % _gapic_generator_csharp_version],
 )
