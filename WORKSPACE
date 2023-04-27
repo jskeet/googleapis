@@ -427,7 +427,7 @@ http_archive(
 )
 
 _gapic_generator_csharp_org = "jskeet"
-_gapic_generator_csharp_branch = "bazel-test"
+_gapic_generator_csharp_branch = "fix-bazel"
 
 http_archive(
     name = "gapic_generator_csharp",
