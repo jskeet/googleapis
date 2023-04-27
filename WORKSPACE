@@ -20,7 +20,7 @@ switched_rules_by_language(
     java = True,
     nodejs = True,
     php = True,
-    python = True,
+    python = False,
     ruby = True,
 )
 

@@ -3,3 +3,14 @@ alias(
     actual = "@rules_gapic//bazel:build_file_generator",
 )
 
+load("@gapic_generator_csharp//rules_csharp_gapic:csharp_compiler_repo.bzl", "csharp_compiler", "dotnet_restore")
+load("@gapic_generator_csharp//rules_csharp_gapic:csharp_compiler.bzl", "csharp_binary")
+
+csharp_binary(
+    name = "testme",
+    visibility = ["//visibility:public"],
+    restore = "@gapic_generator_restore//:restore",
+    csproj = "//:csharptest/TestApp.csproj",
+)
+
+exports_files(["csharptest/TestApp.csproj"])
